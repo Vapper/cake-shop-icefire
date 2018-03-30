@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css"/>
+    <script src="/bootstrap/jquery-3.2.1.min.js"></script>
+    <script src="/bootstrap/popper.min.js"></script>
+    <script src="/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/css/common-style.css"/>
+    <link rel="stylesheet" href="/css/login-style.css"/>
+
+    <script src="/js/common.js"></script>
+
+    <script type="application/javascript">
+        $(function () {
+            if (getUrlParameter("error")) {
+                $("#login-error").removeClass("d-none");
+            }
+        });
+    </script>
+
+</head>
+<body>
+
+<!-- navbar begin -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/index.html">
+        <img src="/images/logo_regular_white_text_part.png" width="129" height="30"/>
+    </a>
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/login.html">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- navbar end -->
+
+<!-- content begin -->
+<div class="container login-body text-center">
+    <form class="form-signin" method="post">
+
+        <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
+
+        <div id="login-error" class="alert alert-danger d-none" role="alert">
+            D'oh! <br/> Wrong username/password
+        </div>
+
+        <div class="form-group">
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""
+                   autofocus="">
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                   required="">
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block btn-dark" type="submit">Sign in</button>
+
+    </form>
+
+</div>
+<!-- content end -->
+
+<!-- footer start -->
+<div class="fixed-bottom text-center">
+    <p class="mt-5 mb-3 text-muted">#Icefireforever</p>
+</div>
+<!-- footer end -->
+
+</body>
+</html>

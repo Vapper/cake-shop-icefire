@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css"/>
+    <script src="/bootstrap/jquery-3.2.1.min.js"></script>
+    <script src="/bootstrap/popper.min.js"></script>
+    <script src="/bootstrap/bootstrap.min.js"></script>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/orders.js"></script>
+
+    <link rel="stylesheet" href="/css/common-style.css"/>
+
+    <style>
+        #all-orders tbody tr {
+            cursor: pointer;
+        }
+        #all-orders tr {
+            line-height: 41px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- navbar begin -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/index.html">
+        <img src="/images/logo_regular_white_text_part.png" width="129" height="30"/>
+    </a>
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/assignment.html">Challenge</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cakes.html">Cakes</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/orders.html">Orders</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/logout">Log out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- navbar end -->
+
+<!-- content begin -->
+<div class="container">
+    <br/>
+
+    <h1>Tellimused</h1>
+
+    <!-- list of orders begin -->
+    <table id="all-orders" class="table table-striped table-dark table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Client name</th>
+            <th scope="col">Total sum</th>
+            <th scope="col">State</th>
+            <th scope="col" style="width: 300px;"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- dynamically adding orders here-->
+        </tbody>
+    </table>
+    <!-- list of orders end -->
+
+</div>
+<!-- content end -->
+
+<!-- footer start -->
+<div class="fixed-bottom text-center">
+    <p class="mt-5 mb-3 text-muted">#Icefireforever</p>
+</div>
+<!-- footer end -->
+
+<!-- order details modal start -->
+<div id="order-details-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Order #<span class="order-id"></span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table id="ordered-cakes" class="table table-striped table-dark table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Cake</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- dynamically adding stuff -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- order details modal end -->
+
+</body>
+</html>

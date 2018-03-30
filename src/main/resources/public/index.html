@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css"/>
+    <script src="/bootstrap/jquery-3.2.1.min.js"></script>
+    <script src="/bootstrap/popper.min.js"></script>
+    <script src="/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/css/common-style.css"/>
+    <link rel="stylesheet" href="/css/login-style.css"/>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/index.js"></script>
+
+</head>
+<body>
+
+<!-- navbar begin -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/index.html">
+        <img src="/images/logo_regular_white_text_part.png" width="129" height="30"/>
+    </a>
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/login.html">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- navbar end -->
+
+<!-- content begin -->
+<div class="container login-body text-center">
+
+    <form id="new-order-form">
+        <h1 class="h3 mb-3 font-weight-normal">Order a cake</h1>
+
+
+        <div class="form-group row">
+            <label for="customerName" class="col-sm-2 col-form-label">Name</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="customerName" name="customerName" autocomplete="off">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="amount" class="col-sm-2 col-form-label">Quantity</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="amount" name="amount" autocomplete="off">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="cake-select" class="col-sm-2 col-form-label">Cake</label>
+
+            <div class="col-sm-10">
+                <select class="form-control" id="cake-select" name="cakeId">
+                    <!-- dynamically adding list of cakes -->
+                </select>
+            </div>
+        </div>
+
+        <submit id="new-order-btn" class="btn btn-lg btn-primary btn-block btn-dark">Submit order</submit>
+    </form>
+
+</div>
+<!-- content end -->
+
+<!-- footer start -->
+<div class="fixed-bottom text-center">
+    <p class="mt-5 mb-3 text-muted">#Icefireforever</p>
+</div>
+<!-- footer end -->
+
+</body>
+
+</body>
+</html>

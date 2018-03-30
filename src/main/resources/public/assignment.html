@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css"/>
+    <script src="/bootstrap/jquery-3.2.1.min.js"></script>
+    <script src="/bootstrap/popper.min.js"></script>
+    <script src="/bootstrap/bootstrap.min.js"></script>
+
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/common-style.css"/>
+
+    <style>
+        #assignment-list {
+        }
+
+        #assignment-list a.active {
+            background-color: #343a40;
+            border-color: #343a40;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!-- navbar begin -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/index.html">
+        <img src="/images/logo_regular_white_text_part.png" width="129" height="30"/>
+    </a>
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/assignment.html">Challenge</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cakes.html">Cakes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/orders.html">Orders</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/logout">Log out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- navbar end -->
+
+<!-- content begin -->
+<div class="container bootstrap">
+    <br/>
+
+    <h1>Challenge</h1>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group" id="assignment-list" role="tablist">
+
+                <a class="list-group-item list-group-item-action active" data-toggle="list"
+                   href="#set-up" role="tab">
+                    To start with
+                </a>
+
+                <a class="list-group-item list-group-item-action" data-toggle="list"
+                   href="#new-order-missing-validation" role="tab">
+                    Ordering form is missing validation
+                </a>
+
+                <a class="list-group-item list-group-item-action" data-toggle="list"
+                   href="#invalid-order-price" role="tab">
+                    Incorrect total sum while placing the order
+                </a>
+
+                <a class="list-group-item list-group-item-action" data-toggle="list"
+                   href="#deactive-cakes" role="tab" aria-controls="profile">
+                    Deactivating a cake
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-secondary" data-toggle="list"
+                   href="#refactoring" role="tab" aria-controls="profile">
+                    Boonus 1: Refactor database queries using an ORM framework of your choice
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-secondary" data-toggle="list"
+                   href="#statistics" role="tab" aria-controls="profile">
+                    Boonus 2: Statistics page
+                </a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="set-up" role="tabpanel">
+
+                    <p>
+                        Import the Gradle project into freely chosen development environment (preferably Eclipse or IntelliJ).
+                    </p>
+
+                    <p>
+                        Run the main method from class ee.cake.Application to start the application.
+                        The application starts on the port:
+                        <a href="http//localhost:8080/index.html" target="_blank">http://localhost:8080/index.html</a>
+                        <br/>
+                        The application itself is a Spring Boot application using embedded HSQLDB database.
+                    </p>
+
+                    <p>
+                        Log in form - <a href="http//localhost:8080/login.html" target="_blank">http://localhost:8080/login.html</a>
+                        <small class="text-muted">(as a note: in order to simplify things, all pages can be viewed without logging in)</small>
+
+                        <br /> username: chuck norris
+                        <br /> password: bart
+                    </p>
+
+                    <p>
+                        The application has few bugs that need fixing. Fortunately, they have already been described in the following sections, which means that you just need to find a solution for them.
+                    </p>
+
+                    <p>
+                        Send your solutions via a git repository link to our e-mail: careers@icefire.ee
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="new-order-missing-validation" role="tabpanel">
+                    <p>
+                        Ordering form on the page <a href="/index.html" target="_blank">index.html</a> lacks webform validation
+                    </p>
+
+                    <p>
+                        However, the developer has added form validation on <a
+                            href="/cakes.html" target="_blank">cakes.html</a> page,
+                        where a new cake can be added.
+                        There the form validation is built already built with javascript and acts prior to sending out the request.
+                        Validation is in the cakes.js file.
+                        <br/>
+                        Please study how the validation task is solved in <a
+                            href="/cakes.html" target="_blank">cakes.html</a>
+                        page and add an equal validation to the ordering form on
+                        <a href="/index.html" target="_blank">index.html</a>.
+                    </p>
+
+                    <p>
+                        The requirements here are that the client name is filled with any
+                        symbol except space and the amount section is always filled with a number that is integer.
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="invalid-order-price" role="tabpanel">
+                    <p>
+                        While placing an order on ordering form in <a href="/index.html" target="_blank">index.html</a>
+                        an entry is made in tables “ORDER” and “ORDER_CAKE”.
+                        In the table “ORDER” there is column “PRICE” that needs to have a value equal to the total sum of the order (amount of cakes * price).
+                    </p>
+
+                    <p>
+                        For some reason the column PRICE shows the incorrect number. Please find the reason why and fix it.
+                    </p>
+
+                    <p>
+                        Insert is made in java class OrderDao.
+                        <br/>
+                        The total sum is calculated in method OrderDao.findTotalOrderPrice(...)
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="deactive-cakes" role="tabpanel">
+                    <p>
+                        The list of the cakes is displayed on the <a href="/cakes.html" target="_blank">cakes.html</a>
+                        page. Currently all the cakes that are active are displayed there.
+                        The information for this  is requested from the dynamic REST-service
+                        <a href="/cakes/available" target="_blank">CakeController.findAvailableCakes</a>.
+                    </p>
+
+                    <p>
+                        However, at the same time there has to be a possibility to remove the cake from the active
+                        list (cakes available). For this purpose the database table “CAKE” has the column “AVAILABLE”.
+                        <br/>
+                        In addition there is a need to display all the cakes (both available and not available) on the
+                        <a href="/cakes.html" target="_blank">cakes.html</a> page.
+                    </p>
+
+                    <p>
+                        In order to do so please make the changes on the <a href="/cakes.html" target="_blank">cakes.html</a> page
+                        so that all the cakes are displayed by using the REST-service
+                        <a href="/cakes/all" target="_blank">CakeController.findAllCakes</a>.
+                    </p>
+
+                    <p>
+                        After that please add column “Availability” into the  “CAKES” table on the
+                        <a href="/cakes.html" target="_blank">cakes.html</a> page.
+                        This column shows the ”available” value per cake type from the database.
+                    </p>
+
+                    <p>
+                        Following that please add to every available cake in the “CAKE” table on the <a href="/cakes.html" target="_blank">cakes.html</a>
+                        page a button named “Deactivate”, which calls out the REST-service "[POST] /cakes/{cakeId}/deactive", where {cakeId} is cake-id.
+                        The button must be displayed only for cakes that are currently available.
+                        <br/>
+
+                        Similar functionality can be found on the
+                        <a href="/orders.html" target="_blank">orders.html</a> page,
+                        under Cancellation /Preparation/ Delivery of the order
+                    </p>
+                    <p>
+                        After calling out "[POST] /cakes/{cakeId}/deactive" it becomes obvious that the cake is not deactivated
+                        because the code in java has not been completed.
+                        <br/>
+                        In order to fix it you need to implement the CakeDao.updateAvailability(Long cakeId, boolean availability)
+                        method, which need an update sentence. Similar update sentence can be found in the method  OrderDao.updateStatus
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="refactoring" role="tabpanel">
+                    <p>
+                        Please refactor database queries. For this use the ORM framework of your choice.
+                    </p>
+                    <p>
+                        Spring allows to use different ORM frameworks that simplify to query data from database.
+                    </p>
+                    <p>
+                        The task is to refactor the database queries by using one of these options.
+                    </p>
+                    <p>
+                        For example: <a href="https://spring.io/guides/gs/accessing-data-jpa/" target="_blank">Spring boot + JPA</a>
+                    </p>
+                </div>
+
+                <div class="tab-pane fade" id="statistics" role="tabpanel">
+                    <p>
+                        Please create a new page for showing statistics and add a menu link next to the “Orders”.
+                    </p>
+                    <p>
+                        The information you should display is the following: The name of the cake, How many of the cakes have been ordered,
+                        How many percentages it forms from all the orders placed.
+
+                        <br />
+                        For example:<br />
+                        * Shrove Tuesday Buns: 10 pieces, 33%<br />
+                        * Brita Cake 21tk 66%
+
+                    </p>
+                    <p>
+                        You can freely chose the design and layout of displaying the data.
+                        You can use a table or a more complex solution of your choice
+                        <small class="text-muted">(for example chart framework <a href="http://www.chartjs.org/docs/latest/" target="_blank">chart.js</a>)</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- content end -->
+
+<!-- footer start -->
+<div class="fixed-bottom text-center">
+    <p class="mt-5 mb-3 text-muted">#Icefireforever</p>
+</div>
+<!-- footer end -->
+
+</body>
+</html>

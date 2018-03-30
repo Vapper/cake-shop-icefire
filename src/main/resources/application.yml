@@ -1,0 +1,11 @@
+server.port: 8080
+
+spring.datasource:
+  url: jdbc:hsqldb:mem:testdb
+  driverClassName: org.hsqldb.jdbcDriver
+  username: sa
+  password:
+  initialize: true
+  data: classpath:/db/data.sql
+  schema: classpath:/db/schema.sql
+
